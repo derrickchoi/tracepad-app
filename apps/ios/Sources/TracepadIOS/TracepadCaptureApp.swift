@@ -72,16 +72,21 @@ public struct TracepadCaptureRootView: View {
     private var clientPicker: some View {
         VStack(alignment: .leading, spacing: 10) {
             SectionLabel("Active client")
-            Picker("Client", selection: $selectedClient) {
+            HStack(spacing: 6) {
                 ForEach(FieldClient.allCases) { client in
-                    Text(client.title).tag(client)
+                    ClientSegmentButton(
+                        title: client.title,
+                        selected: selectedClient == client
+                    ) {
+                        selectedClient = client
+                        noteText = client.seedNote
+                        draftReady = true
+                    }
                 }
             }
-            .pickerStyle(.segmented)
-            .onChange(of: selectedClient) { _, newClient in
-                noteText = newClient.seedNote
-                draftReady = true
-            }
+            .padding(3)
+            .background(Color.black.opacity(0.08))
+            .clipShape(RoundedRectangle(cornerRadius: 15))
         }
     }
 
@@ -256,6 +261,27 @@ private struct StatusPill: View {
             .padding(.vertical, 6)
             .background(color.opacity(0.16))
             .clipShape(Capsule())
+    }
+}
+
+private struct ClientSegmentButton: View {
+    let title: String
+    let selected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(TracepadIOSColor.ink)
+                .frame(maxWidth: .infinity)
+                .frame(height: 30)
+                .background(selected ? Color.white : Color.clear)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(title)
+        .accessibilityAddTraits(selected ? [.isSelected] : [])
     }
 }
 
