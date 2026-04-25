@@ -1,0 +1,27 @@
+{
+  "name": "Tracepad.ai",
+  "tagline": "Capture the work. Ship the report.",
+  "positioning": "Tracepad.ai helps high-context service teams capture what happened, structure it quickly, and ship professional deliverables without rebuilding the story by hand.",
+  "stage": "pre-seed to early seed",
+  "team": "1 full-time founder plus 2-3 part-time contractors",
+  "pilotAccounts": 3,
+  "payingTeams": 9,
+  "activeSeats": 42,
+  "mrr": 3200,
+  "fundraiseTarget": 1500000,
+  "pricing": {
+    "solo": "$69/mo",
+    "team": "$249/mo",
+    "business": "$599+/mo"
+  },
+  "workflow": ["Capture", "Organize", "Generate", "Review", "Deliver"],
+  "terms": {
+    "Client": "The company being served",
+    "Project": "The job, engagement, or site effort",
+    "Visit": "Raw captured context from a real interaction",
+    "Draft": "Generated output before review",
+    "Deliverable": "Final report, proposal, or follow-up sent out",
+    "Portal": "Client-facing packaged output",
+    "Workspace": "The operating surface where everything is reviewed and assembled"
+  }
+}

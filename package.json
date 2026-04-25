@@ -1,0 +1,12 @@
+{
+  "name": "tracepad-ai-company-package",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-web.mjs",
+    "dev": "node scripts/serve-web.mjs",
+    "artifacts": "/Users/derrickchoi/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/generate_company_artifacts.py && NODE_PATH=/Users/derrickchoi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules /Users/derrickchoi/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/generate_deck.mjs",
+    "verify": "npm run build && /Users/derrickchoi/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/verify_artifacts.py"
+  }
+}

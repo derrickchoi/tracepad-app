@@ -1,0 +1,6 @@
+.vercel
+apps/*/.build
+apps/*/.swiftpm
+apps/web/dist
+output/video/frames
+.DS_Store

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracepad.ai - Capture the work. Ship the report.</title>
+    <meta name="description" content="Tracepad.ai turns field notes, photos, visits, and client context into polished reports, proposals, follow-ups, and task plans." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Tracepad.ai home">
+        <img src="./brand/tracepad-mark.svg" alt="" />
+        <span>Tracepad.ai</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#workflow">Workflow</a>
+        <a href="#product">Product</a>
+        <a href="#pricing">Pricing</a>
+        <button class="nav-login" data-action="login">Log in</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">For field consultants and service teams</p>
+          <h1>Capture the work. Ship the report.</h1>
+          <p class="lede">Tracepad.ai turns voice notes, photos, site visits, client conversations, and messy project context into client-ready reports, proposals, follow-ups, and task plans.</p>
+          <div class="hero-actions">
+            <button class="primary" data-action="login">Open demo workspace</button>
+            <a class="secondary" href="#product">See the product</a>
+          </div>
+          <div class="proof">
+            <strong>Prototype traction</strong>
+            <span>3 pilots</span>
+            <span>9 paying teams</span>
+            <span>42 active seats</span>
+            <span>$3.2k MRR</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Tracepad.ai field context preview">
+          <div class="device">
+            <div class="device-head">
+              <span>Field Note</span>
+              <span class="status">Ready to draft</span>
+            </div>
+            <div class="note-card active">
+              <p>Voice note</p>
+              <strong>Roof membrane inspection - north wing</strong>
+              <small>3m 12s, 7 photos, 4 tasks detected</small>
+            </div>
+            <div class="photo-strip">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="draft-preview">
+              <p>Generated deliverable</p>
+              <h3>Client-ready site recap</h3>
+              <ul>
+                <li>Evidence linked to source photos</li>
+                <li>Scope risks separated from recommendations</li>
+                <li>Follow-up tasks routed to the team</li>
+              </ul>
+            </div>
+            <img class="logo-concept" src="./brand/tracepad-imagegen-logo.png" alt="Tracepad.ai generated logo concept" />
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow-band" id="workflow">
+        <p class="eyebrow">Operating workflow</p>
+        <div class="workflow">
+          <span>Capture</span>
+          <span>Organize</span>
+          <span>Generate</span>
+          <span>Review</span>
+          <span>Deliver</span>
+        </div>
+      </section>
+
+      <section class="product" id="product">
+        <div class="section-head">
+          <p class="eyebrow">Workspace</p>
+          <h2>Evidence on the left, draft on the right, review always visible.</h2>
+        </div>
+        <div class="workspace-shell" id="workspace">
+          <aside class="rail">
+            <button class="rail-item selected" data-view="overview">Overview</button>
+            <button class="rail-item" data-view="capture">Capture</button>
+            <button class="rail-item" data-view="drafts">Drafts</button>
+            <button class="rail-item" data-view="portal">Portal</button>
+          </aside>
+          <section class="evidence">
+            <div class="panel-title">
+              <span>Client</span>
+              <strong>Harbor Ridge Retrofit</strong>
+            </div>
+            <div class="timeline" id="timeline"></div>
+          </section>
+          <section class="draft">
+            <div class="panel-title">
+              <span>Draft</span>
+              <strong id="draft-title">Inspection recap</strong>
+            </div>
+            <textarea id="draft-body" aria-label="Generated draft"></textarea>
+            <div class="draft-actions">
+              <button class="secondary" id="regenerate">Regenerate</button>
+              <button class="primary" id="finalize">Finalize deliverable</button>
+            </div>
+          </section>
+          <aside class="inspector">
+            <p class="eyebrow">Source confidence</p>
+            <div class="meter"><span></span></div>
+            <dl>
+              <div><dt>Photos</dt><dd>7</dd></div>
+              <div><dt>Tasks</dt><dd>4</dd></div>
+              <div><dt>Client tone</dt><dd>Formal</dd></div>
+            </dl>
+            <p class="hint" id="status-message">Select a workflow mode to update the workspace.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <div>
+          <p class="eyebrow">Pricing</p>
+          <h2>Simple early-stage SaaS pricing.</h2>
+        </div>
+        <div class="price-grid">
+          <article><span>Solo</span><strong>$69/mo</strong><p>Independent consultants turning visits into polished deliverables.</p></article>
+          <article><span>Team</span><strong>$249/mo</strong><p>Small service teams coordinating clients, projects, and field notes.</p></article>
+          <article><span>Business</span><strong>$599+/mo</strong><p>Higher-volume teams with onboarding, storage, and usage expansion.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="login-dialog" aria-labelledby="login-title">
+      <form method="dialog" class="login-card">
+        <button class="close" value="cancel" aria-label="Close">×</button>
+        <h2 id="login-title">Open Tracepad workspace</h2>
+        <label>Email<input id="email" value="demo@tracepad.ai" /></label>
+        <label>Password<input id="password" type="password" value="tracepad-demo" /></label>
+        <button class="primary" id="login-submit" value="default">Continue</button>
+        <p id="login-result" role="status"></p>
+      </form>
+    </dialog>
+
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
