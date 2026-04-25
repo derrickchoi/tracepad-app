@@ -21,7 +21,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 | Pitch deck | passed | Local `.pptx` has 12 slides and imported to Google Slides |
 | Imagegen | passed partially | Live API generated `output/imagegen/tracepad-imagegen-logo.png`; broader asset set uses local generated fallback assets |
 | Figma | passed | Live Figma capture created: https://www.figma.com/design/xzxjzgZ2HTaqvyXBm4etuZ |
-| macOS native build | passed | `swift build` in `apps/macos` completed successfully outside sandbox |
+| macOS native build and launch | passed | `./script/build_and_run.sh --verify` built a SwiftPM `.app` bundle, launched it, and confirmed `TracepadMac launched`; Computer Use inspected the live `Tracepad Review Studio` window |
 | iOS native build | passed | `swift build` in `apps/ios` completed successfully outside sandbox after adding macOS host platform for package compilation |
 | Vercel deploy | passed with note | Deployment ready and aliased to https://tracepad-app.vercel.app; Vercel-GitHub repo connection failed |
 | Gmail outreach | passed as draft | Created unsent Gmail draft `r4184564242814212959` |
@@ -44,7 +44,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 - Vercel: deployment succeeded, but automatic GitHub repository connection failed with an access/repository-linking error.
 - Calendar: no event was sent because date, time, timezone, attendee confirmation, and explicit send permission were not available.
 - Remotion: true Remotion render is blocked by missing runtime package. A source file and MP4 fallback render exist.
-- Native UI launch: macOS/iOS source builds passed, but no simulator or app UI launch was completed in this run.
+- iOS launch: source builds passed, but the current `apps/ios` surface is a SwiftPM library/view package without an Xcode app target or simulator-installable scheme.
 
 ## Commands Run
 
@@ -56,4 +56,3 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 - `npx vercel deploy --yes`
 - Imagegen CLI generate for `output/imagegen/tracepad-imagegen-logo.png`
 - DOCX render via Documents skill `render_docx.py`
-

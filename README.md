@@ -19,6 +19,18 @@ Test login:
 - Email: `demo@tracepad.ai`
 - Password: `tracepad-demo`
 
+## Native Run
+
+macOS:
+
+```bash
+./script/build_and_run.sh --verify
+```
+
+iOS:
+
+`apps/ios` currently contains a SwiftUI package/view surface that builds with SwiftPM. It is not yet an installable simulator app because there is no Xcode app target or scheme.
+
 ## Project Shape
 
 - `apps/web`: merged marketing site, login, and product workspace
@@ -42,4 +54,3 @@ Test login:
 - Fundraise: about $1.5M seed
 - ICP: high-context service businesses with messy but repeatable deliverables
 - Pricing: Solo $69/mo, Team $249/mo, Business $599+/mo
-

@@ -43,7 +43,7 @@ Source of truth: `prompt.md`
 | Google Drive mirror | soft blocked | Sheets/Slides/handoff Doc created; foldered full package upload unavailable in exposed tools |
 | Vercel deployment | done | Production alias: https://tracepad-app.vercel.app |
 | Browser verification | done | Local and deployed smoke flows passed |
-| Native app verification | done | macOS and iOS SwiftPM builds passed; simulator/UI launch not attempted |
+| Native app verification | done | macOS built and launched via `./script/build_and_run.sh --verify`; iOS SwiftPM build passed but no simulator app target exists |
 | Pitch video | soft blocked | MP4 fallback rendered; true Remotion CLI render blocked by missing Remotion runtime |
 | Gmail outreach | done | Gmail draft created and not sent |
 | Calendar invite | soft blocked | Calendar profile verified; no event sent due missing confirmed schedule |
@@ -64,6 +64,7 @@ Source of truth: `prompt.md`
 - Vercel deployment succeeded, but Vercel CLI failed to connect the GitHub repository to the Vercel project automatically.
 - Calendar invite is gated on missing date/time/timezone/attendee confirmation and explicit send permission.
 - True Remotion CLI render is soft blocked because no Remotion runtime package is available; a Remotion-style source and MP4 fallback render exist.
+- iOS live launch is blocked by project shape: `apps/ios` is a SwiftPM library/view package, not an Xcode app target with a simulator scheme.
 
 ## Live Links
 
