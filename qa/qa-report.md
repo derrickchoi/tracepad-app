@@ -14,7 +14,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 | Local artifact generation | passed | `npm run artifacts` generated 23 DOCX files, workbook, deck, and brand assets |
 | Web build | passed | `npm run build` built to `apps/web/dist` |
 | Artifact verification | passed | `npm run verify` passed required file, workbook sheet/formula token, and PPTX slide-count checks |
-| Local browser verification | passed | `http://localhost:4173` loaded; login dialog opened; demo credentials accepted; workspace mode switch and regenerate action updated UI state; mobile viewport rendered |
+| Local browser verification | passed | `http://localhost:4174` loaded; demo credentials accepted; public site was hidden after login; dedicated workspace opened with capture, evidence, review, delivery, and task surfaces; client switching, note edit, draft generation, photo toggle, finalization, desktop layout, and mobile layout passed |
 | Deployed browser verification | passed | `https://tracepad-app.vercel.app` loaded; hero visible; demo login and regenerate interaction passed |
 | DOCX visual QA | passed after repair | PRD rendered with artifact-tool to `/tmp/tracepad-docx-render`; initial table layout defect was fixed, then page rendered cleanly |
 | Financial workbook | passed | Local `.xlsx` exists with required tabs and no scanned formula error tokens; imported to Google Sheets |
@@ -51,6 +51,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 - `npm run artifacts`
 - `npm run build`
 - `npm run verify`
+- Browser QA against `http://localhost:4174` for logged-in web workspace
 - `swift build` in `apps/macos`
 - `swift build` in `apps/ios`
 - `./script/build_and_run_ios.sh --verify`
