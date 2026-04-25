@@ -143,6 +143,11 @@ function addActivity(message) {
   renderActivity();
 }
 
+function openLoginDialog() {
+  if (loginDialog.open) return;
+  loginDialog.showModal();
+}
+
 function renderWorkspace() {
   const project = activeProject();
 
@@ -264,7 +269,7 @@ function generateDraft() {
 document.addEventListener("click", (event) => {
   const loginTrigger = event.target.closest("[data-action='login']");
   if (loginTrigger) {
-    loginDialog.showModal();
+    openLoginDialog();
     return;
   }
 
@@ -294,6 +299,10 @@ document.addEventListener("click", (event) => {
     renderModes();
     return;
   }
+});
+
+$$("[data-action='login']").forEach((button) => {
+  button.addEventListener("click", openLoginDialog);
 });
 
 $("#login-submit").addEventListener("click", (event) => {

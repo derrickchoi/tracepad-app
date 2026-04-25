@@ -18,7 +18,7 @@
           <a href="#workflow">Workflow</a>
           <a href="#product">Product</a>
           <a href="#pricing">Pricing</a>
-          <button class="nav-login" data-action="login">Log in</button>
+          <button class="nav-login" type="button" data-action="login">Log in</button>
         </nav>
       </header>
 
@@ -29,7 +29,7 @@
             <h1>Capture the work. Ship the report.</h1>
             <p class="lede">Tracepad.ai turns voice notes, photos, site visits, client conversations, and messy project context into client-ready reports, proposals, follow-ups, and task plans.</p>
             <div class="hero-actions">
-              <button class="primary" data-action="login">Open demo workspace</button>
+              <button class="primary" type="button" data-action="login">Open demo workspace</button>
               <a class="secondary" href="#product">See the product</a>
             </div>
             <div class="proof">
@@ -40,8 +40,36 @@
               <span>$3.2k MRR</span>
             </div>
           </div>
-          <div class="hero-visual" aria-label="Tracepad.ai product preview">
-            <img src="./brand/tracepad-hero-field-workspace.png" alt="Tracepad.ai field workspace preview" />
+          <div class="hero-visual" aria-label="Tracepad.ai field workspace preview">
+            <div class="field-card">
+              <div class="field-card-head">
+                <span>Field Note</span>
+                <strong>Ready to draft</strong>
+              </div>
+              <article class="note-card">
+                <span>Voice note</span>
+                <h2>Roof membrane inspection - north wing</h2>
+                <p>3m 12s, 7 photos, 4 tasks detected</p>
+              </article>
+              <div class="photo-strip" aria-label="Attached roof photos">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <article class="deliverable-card">
+                <span>Generated deliverable</span>
+                <h2>Client-ready site recap</h2>
+                <ul>
+                  <li>Evidence linked to source photos</li>
+                  <li>Scope risks separated from recommendations</li>
+                  <li>Follow-up tasks routed to the team</li>
+                </ul>
+              </article>
+              <div class="mock-brand">
+                <img src="./brand/tracepad-imagegen-logo.png" alt="" />
+                <strong>Tracepad.ai</strong>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -72,7 +100,7 @@
                 <li>Review source evidence, task plans, and portal package status.</li>
                 <li>Finalize deliverables without leaving the product.</li>
               </ul>
-              <button class="primary" data-action="login">Launch logged-in demo</button>
+              <button class="primary" type="button" data-action="login">Launch logged-in demo</button>
             </div>
           </div>
         </section>
