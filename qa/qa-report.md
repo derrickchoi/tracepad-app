@@ -15,7 +15,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 | Web build | passed | `npm run build` built to `apps/web/dist` |
 | Artifact verification | passed | `npm run verify` passed required file, workbook sheet/formula token, and PPTX slide-count checks |
 | Local browser verification | passed | `http://localhost:4174` loaded; demo credentials accepted; public site was hidden after login; dedicated workspace opened with capture, evidence, review, delivery, and task surfaces; client switching, note edit, draft generation, photo toggle, finalization, desktop layout, and mobile layout passed |
-| Deployed browser verification | passed | `https://tracepad-app.vercel.app` loaded; hero visible; demo login and regenerate interaction passed |
+| Deployed browser verification | passed | `https://tracepad-app.vercel.app` loaded after production redeploy; demo login hid the public site and opened the dedicated workspace; Northline project selection, Tasks mode, and draft generation passed |
 | DOCX visual QA | passed after repair | PRD rendered with artifact-tool to `/tmp/tracepad-docx-render`; initial table layout defect was fixed, then page rendered cleanly |
 | Financial workbook | passed | Local `.xlsx` exists with required tabs and no scanned formula error tokens; imported to Google Sheets |
 | Pitch deck | passed | Local `.pptx` has 12 slides and imported to Google Slides |
