@@ -22,7 +22,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 | Imagegen | passed partially | Live API generated `output/imagegen/tracepad-imagegen-logo.png`; broader asset set uses local generated fallback assets |
 | Figma | passed | Live Figma capture created: https://www.figma.com/design/xzxjzgZ2HTaqvyXBm4etuZ |
 | macOS native build and launch | passed | `./script/build_and_run.sh --verify` built a SwiftPM `.app` bundle, launched it, and confirmed `TracepadMac launched`; Computer Use inspected the live `Tracepad Review Studio` window |
-| iOS native build | passed | `swift build` in `apps/ios` completed successfully outside sandbox after adding macOS host platform for package compilation |
+| iOS native build and launch | passed | `swift build --package-path apps/ios` completed successfully; `./script/build_and_run_ios.sh --verify` compiled a simulator `.app`, installed it, launched `ai.tracepad.capture`, and Computer Use inspected the live iPhone 17 simulator UI |
 | Vercel deploy | passed with note | Deployment ready and aliased to https://tracepad-app.vercel.app; Vercel-GitHub repo connection failed |
 | Gmail outreach | passed as draft | Created unsent Gmail draft `r4184564242814212959` |
 | Calendar | gated | Calendar profile verified for `derrickchoi@gmail.com`; no invite sent because meeting details and explicit send permission are missing |
@@ -44,7 +44,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 - Vercel: deployment succeeded, but automatic GitHub repository connection failed with an access/repository-linking error.
 - Calendar: no event was sent because date, time, timezone, attendee confirmation, and explicit send permission were not available.
 - Remotion: true Remotion render is blocked by missing runtime package. A source file and MP4 fallback render exist.
-- iOS launch: source builds passed, but the current `apps/ios` surface is a SwiftPM library/view package without an Xcode app target or simulator-installable scheme.
+- iOS runner: the current simulator launcher builds a local `.app` bundle directly from Swift sources rather than maintaining an Xcode project/scheme.
 
 ## Commands Run
 
@@ -53,6 +53,7 @@ Tracepad.ai has a complete local company package with a deployed web app, live L
 - `npm run verify`
 - `swift build` in `apps/macos`
 - `swift build` in `apps/ios`
+- `./script/build_and_run_ios.sh --verify`
 - `npx vercel deploy --yes`
 - Imagegen CLI generate for `output/imagegen/tracepad-imagegen-logo.png`
 - DOCX render via Documents skill `render_docx.py`

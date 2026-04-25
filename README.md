@@ -29,7 +29,11 @@ macOS:
 
 iOS:
 
-`apps/ios` currently contains a SwiftUI package/view surface that builds with SwiftPM. It is not yet an installable simulator app because there is no Xcode app target or scheme.
+```bash
+./script/build_and_run_ios.sh --verify
+```
+
+The iOS runner compiles the SwiftUI package into a simulator `.app`, installs it on the booted/default iPhone simulator, and launches the Tracepad capture MVP.
 
 ## Project Shape
 
